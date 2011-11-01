@@ -1,0 +1,2 @@
+# <target name>	<source device>		<key file>	<options>
+swap1 /dev/mapper/minotaurus-swap /dev/urandom swap

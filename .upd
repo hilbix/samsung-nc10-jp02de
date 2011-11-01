@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Update all those linked files
+# This is unconditionally.
+# DO NOT EDIT THEM HERE.
+
+nope=false
+if [ -n "$(git status --porcelain 2>/dev/null)" ]
+then
+	nope=:
+fi
+
+# Quick and dirty
+for dir in *
+do
+	[ -d "$dir" ] && find "$dir" -type f -print
+done |
+while read -r name
+do
+	cmp -s "$name" "/$name" && continue
+	if $nope
+	then
+		echo Directory is dirty
+		echo not updated: $name
+		continue
+	fi
+	cp -vf "/$name" "$name"
+done
+
+echo "all in sync"

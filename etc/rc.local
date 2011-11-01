@@ -1,0 +1,28 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+echo min_power > /sys/class/scsi_host/host0/link_power_management_policy
+
+# Backlight to 50%=128=0x80
+setpci -s 00:02.0 F4.B=80
+
+for ctl in Master:80 Headphone Speaker Beep:50
+do
+	v=100
+	case "$ctl" in
+	*:*)	v="${ctl#*:}";;
+	esac
+	amixer -q sset ${ctl%:*} $v% unmute
+done
+exit 0

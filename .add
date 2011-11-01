@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Add a file to tracking
+# This just creates the subdirectory and copies it there
+#
+# This needs some tools which you might not have.
+# Find them at http://www.scylla-charybdis.com/tool.php
+
+for a
+do
+	b="`getrealpath "$a"`"
+	case "$b" in
+	/.*)	echo "OOPS $a"; continue;;
+	/*/*)	;;
+	*)	echo "OOPS $a"; continue;;
+	esac
+
+	c="${b#/}"
+	mkdir -p "${c%/*}"
+	echo n | cp -vi "$b" "$c"
+done
+
