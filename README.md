@@ -1,4 +1,6 @@
-This directory tracks some config files of mu Samsung NC10-JP02DE, also called NC10 Ecko Plus.
+This directory tracks some config files of my Samsung NC10-JP02DE, also called NC10 Ecko Plus.
+
+Comments please to https://hydra.geht.net/pager.php
 
 Note that **I do not run a graphical desktop** yet.  I like the commandline.
 
