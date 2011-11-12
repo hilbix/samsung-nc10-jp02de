@@ -64,8 +64,19 @@ po::powerokwait:/etc/init.d/powerfail stop
 11:23:respawn:/sbin/getty 38400 tty11
 12:23:respawn:/sbin/getty 38400 tty12
 13:23:respawn:/sbin/getty 38400 tty13
-14:23:respawn:/root/sbin/ttyexec tty14 /usr/bin/vmstat 15
-16:23:respawn:/root/sbin/ttyexec tty16 /usr/sbin/powertop
+14:23:respawn:/sbin/getty 38400 tty14
+15:23:respawn:/sbin/getty 38400 tty15
+16:23:respawn:/sbin/getty 38400 tty16
+17:23:respawn:/sbin/getty 38400 tty17
+18:23:respawn:/sbin/getty 38400 tty18
+19:23:respawn:/sbin/getty 38400 tty19
+20:23:respawn:/sbin/getty 38400 tty20
+21:23:respawn:/sbin/getty 38400 tty21
+22:23:respawn:/sbin/getty 38400 tty22
+23:23:respawn:/sbin/getty 38400 tty23
+24:23:respawn:/sbin/getty 38400 tty24
+61:23:respawn:/root/sbin/ttyexec tty61 /usr/bin/vmstat 15
+62:23:respawn:/root/sbin/ttyexec tty62 /usr/sbin/powertop
 63:23:respawn:/root/sbin/ttyexec tty63 /usr/local/sbin/battery.sh
 
 # Example how to put a getty on a serial line (for a terminal)
